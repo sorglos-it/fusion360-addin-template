@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Italian. See en.xml for the reference set of keys. -->
+<strings language="it">
+
+  <!-- Command -->
+  <string key="cmd.name">Modello di add-in</string>
+  <string key="cmd.tooltip">Punto di partenza per un add-in di Fusion 360.
+Traccia un segno a metà della linea selezionata.</string>
+
+  <!-- Inputs -->
+  <string key="in.line">Linea</string>
+  <string key="in.line.prompt">Seleziona una linea di schizzo</string>
+  <string key="in.length">Lunghezza</string>
+  <string key="in.flip">Inverti direzione</string>
+
+  <!-- Validation -->
+  <string key="err.no_selection">Seleziona esattamente una linea di schizzo.</string>
+  <string key="err.length_positive">La lunghezza deve essere maggiore di 0.</string>
+  <string key="err.zero_length">La linea selezionata ha lunghezza zero.</string>
+  <string key="err.too_long">La lunghezza supera la linea selezionata ({0} mm).</string>
+
+  <!-- Message boxes -->
+  <string key="msg.panel_missing">Nessun pannello della barra degli strumenti adatto trovato.</string>
+  <string key="msg.exec_failed">Errore durante la creazione della geometria:
+{0}</string>
+  <string key="msg.dialog_failed">Errore durante la costruzione della finestra di dialogo:
+{0}</string>
+  <string key="msg.run_failed">Avvio non riuscito:
+{0}</string>
+  <string key="msg.stop_failed">Arresto non riuscito:
+{0}</string>
+
+</strings>

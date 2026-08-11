@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- French. See en.xml for the reference set of keys. -->
+<strings language="fr">
+
+  <!-- Command -->
+  <string key="cmd.name">Modèle de complément</string>
+  <string key="cmd.tooltip">Point de départ pour un complément Fusion 360.
+Trace un trait au milieu de la ligne sélectionnée.</string>
+
+  <!-- Inputs -->
+  <string key="in.line">Ligne</string>
+  <string key="in.line.prompt">Sélectionner une ligne d'esquisse</string>
+  <string key="in.length">Longueur</string>
+  <string key="in.flip">Inverser la direction</string>
+
+  <!-- Validation -->
+  <string key="err.no_selection">Sélectionnez exactement une ligne d'esquisse.</string>
+  <string key="err.length_positive">La longueur doit être supérieure à 0.</string>
+  <string key="err.zero_length">La ligne sélectionnée n'a aucune longueur.</string>
+  <string key="err.too_long">La longueur dépasse la ligne sélectionnée ({0} mm).</string>
+
+  <!-- Message boxes -->
+  <string key="msg.panel_missing">Aucun panneau de barre d'outils approprié n'a été trouvé.</string>
+  <string key="msg.exec_failed">Erreur lors de la création de la géométrie :
+{0}</string>
+  <string key="msg.dialog_failed">Erreur lors de la construction de la boîte de dialogue :
+{0}</string>
+  <string key="msg.run_failed">Échec du démarrage :
+{0}</string>
+  <string key="msg.stop_failed">Échec de l'arrêt :
+{0}</string>
+
+</strings>

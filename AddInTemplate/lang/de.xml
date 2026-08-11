@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- German. See en.xml for the reference set of keys. -->
+<strings language="de">
+
+  <!-- Command -->
+  <string key="cmd.name">Add-In-Vorlage</string>
+  <string key="cmd.tooltip">Ausgangspunkt für ein Fusion-360-Add-In.
+Zeichnet einen Strich auf der Mitte der gewählten Linie.</string>
+
+  <!-- Inputs -->
+  <string key="in.line">Linie</string>
+  <string key="in.line.prompt">Skizzenlinie wählen</string>
+  <string key="in.length">Länge</string>
+  <string key="in.flip">Richtung umkehren</string>
+
+  <!-- Validation -->
+  <string key="err.no_selection">Bitte genau eine Skizzenlinie wählen.</string>
+  <string key="err.length_positive">Die Länge muss größer als 0 sein.</string>
+  <string key="err.zero_length">Die gewählte Linie hat keine Länge.</string>
+  <string key="err.too_long">Die Länge überschreitet die gewählte Linie ({0} mm).</string>
+
+  <!-- Message boxes -->
+  <string key="msg.panel_missing">Kein passendes Toolbar-Panel gefunden.</string>
+  <string key="msg.exec_failed">Fehler beim Erzeugen der Geometrie:
+{0}</string>
+  <string key="msg.dialog_failed">Fehler beim Aufbau des Dialogs:
+{0}</string>
+  <string key="msg.run_failed">Start fehlgeschlagen:
+{0}</string>
+  <string key="msg.stop_failed">Stopp fehlgeschlagen:
+{0}</string>
+
+</strings>

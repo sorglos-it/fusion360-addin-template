@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reference language file. Every other file in this folder may omit keys;
+  anything missing falls back to the value defined here.
+  Placeholders {0}, {1}, ... are filled in by the add-in and must survive
+  translation. tools/test_addin.py checks both of those for every language.
+-->
+<strings language="en">
+
+  <!-- Command -->
+  <string key="cmd.name">Add-In Template</string>
+  <string key="cmd.tooltip">Starting point for a Fusion 360 add-in.
+Draws a tick at the midpoint of the selected line.</string>
+
+  <!-- Inputs -->
+  <string key="in.line">Line</string>
+  <string key="in.line.prompt">Select a sketch line</string>
+  <string key="in.length">Length</string>
+  <string key="in.flip">Flip direction</string>
+
+  <!-- Validation -->
+  <string key="err.no_selection">Please select exactly one sketch line.</string>
+  <string key="err.length_positive">The length must be greater than 0.</string>
+  <string key="err.zero_length">The selected line has no length.</string>
+  <string key="err.too_long">The length exceeds the selected line ({0} mm).</string>
+
+  <!-- Message boxes -->
+  <string key="msg.panel_missing">No suitable toolbar panel was found.</string>
+  <string key="msg.exec_failed">Error while creating the geometry:
+{0}</string>
+  <string key="msg.dialog_failed">Error while building the dialog:
+{0}</string>
+  <string key="msg.run_failed">Start-up failed:
+{0}</string>
+  <string key="msg.stop_failed">Shutdown failed:
+{0}</string>
+
+</strings>

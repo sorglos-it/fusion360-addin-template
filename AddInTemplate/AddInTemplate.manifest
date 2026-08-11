@@ -1,0 +1,17 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "addin",
+    "id": "00000000-0000-0000-0000-000000000000",
+    "author": "Your Name",
+    "description": {
+        "": "Starting point for a Fusion 360 add-in: translated interface, live preview, validation.",
+        "de-DE": "Ausgangspunkt fuer ein Fusion-360-Add-In: uebersetzte Oberflaeche, Live-Vorschau, Pruefungen.",
+        "es-ES": "Punto de partida para un complemento de Fusion 360: interfaz traducida, vista previa en vivo, validacion.",
+        "fr-FR": "Point de depart pour un complement Fusion 360 : interface traduite, apercu en direct, validation.",
+        "it-IT": "Punto di partenza per un add-in di Fusion 360: interfaccia tradotta, anteprima dal vivo, convalida."
+    },
+    "version": "1.0.0",
+    "runOnStartup": true,
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

@@ -16,7 +16,7 @@ python tools/new_addin.py MyAddIn --install
 
 That produces a folder in Fusion's add-ins directory that runs as-is. Everything you then edit sits between two markers in one file.
 
-Extracted from [fusion360-dovetail](https://github.com/sorglos-it/fusion360-dovetail), where all of it is in production.
+Extracted from [fusion360-dovetail](https://github.com/sorglos-it/fusion360-dovetail), and used to build [fusion360-sketch-grid](https://github.com/sorglos-it/fusion360-sketch-grid) — both in production.
 
 ## Features
 

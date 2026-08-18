@@ -27,6 +27,7 @@ Extracted from [fusion360-dovetail](https://github.com/sorglos-it/fusion360-dove
 - **Handlers that stay alive** — a registry holds every handler reference, the single most common reason an add-in half-works
 - **Validation that explains itself** — errors carry a language-independent key, so `validateInputs` can disable OK and the dialog says why
 - **Offline test harness** — stubs `adsk`, imports the add-in and checks the manifest, the command id, the language files and the icons without starting Fusion
+- **Version in the dialog** — read from the manifest and shown small in the bottom right corner, so there is one place to bump
 - **Generated icons** — 16/32/64 px PNGs from a polygon list, written with `zlib` and `struct`, no imaging library
 - **No dependencies** — pure Python standard library, everything ships with Fusion
 
@@ -85,6 +86,7 @@ MyAddIn/
 | `build_inputs()` | Lay out the dialog. |
 | `remember()` | Carry settings to the next invocation in this session. |
 | `on_input_changed()` | Enable, disable or adjust one field from another. |
+| `core.add_version_label()` | Last input in the dialog, so the version lands bottom right. |
 
 Below `END OF TEMPLATE` sit the four event handlers and `run`/`stop`. They call the functions above and normally need no editing.
 

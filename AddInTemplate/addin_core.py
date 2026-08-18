@@ -15,7 +15,9 @@ tools/new_addin.py renames this file to <name>_core.py when it scaffolds a new
 add-in, so two add-ins built from this template cannot collide in sys.modules.
 """
 
+import io
 import os
+import json
 import traceback
 import xml.etree.ElementTree as ElementTree
 
@@ -214,3 +216,35 @@ def report(ui, strings, key):
                       strings.get('cmd.name'))
     except Exception:
         pass
+
+
+# --------------------------------------------------------------- Version ----
+
+def read_version(addin_dir, name):
+    """Version string out of the add-in's manifest.
+
+    Read rather than hard-coded, so the dialog cannot drift away from what the
+    manifest says and there is only one place to bump.
+    """
+    path = os.path.join(addin_dir, '%s.manifest' % name)
+    try:
+        with io.open(path, encoding='utf-8') as handle:
+            return json.load(handle).get('version', '')
+    except Exception:
+        return ''
+
+
+def add_version_label(inputs, input_id, version):
+    """Small grey version in the bottom right corner of the dialog.
+
+    A read-only text box spanning the full width; the label column is empty so
+    the text can sit right against the edge.
+    """
+    if not version:
+        return None
+    box = inputs.addTextBoxCommandInput(
+        input_id, '',
+        '<div align="right"><font size="1" color="#808080">v%s</font></div>' % version,
+        1, True)
+    box.isFullWidth = True
+    return box

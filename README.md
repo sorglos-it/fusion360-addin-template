@@ -52,6 +52,8 @@ python tools/new_addin.py MyAddIn --install
 
 Then in Fusion: **Utilities → ADD-INS → Add-Ins**, select the entry, tick *Run on Startup*, press **Run**. The button appears on the **SKETCH** tab. Click a line, press the button — the demo command draws a tick at the line's midpoint, which proves selection, preview, validation and translation are all wired up.
 
+Prefer to see it run before scaffolding anything? Download the latest `AddInTemplate-*.zip` from **[Releases](https://github.com/sorglos-it/fusion360-addin-template/releases)**, unpack it into the Fusion add-ins directory and run it — that is the template itself, installable. The scaffolder and the other tools live in `tools/` in the repository.
+
 Check your work at any point without restarting Fusion:
 
 ```bash

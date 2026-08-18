@@ -132,7 +132,10 @@ def main():
     supported = ()
     if strings is not None:
         core = sys.modules.get(core_module) if core_module else None
-        supported = getattr(core, 'SUPPORTED_LANGUAGES', ())
+        # Scaffolded add-ins keep it in the core module; a hand-written one may
+        # carry it on the add-in module itself.
+        supported = (getattr(core, 'SUPPORTED_LANGUAGES', ())
+                     or getattr(module, 'SUPPORTED_LANGUAGES', ()))
     check(bool(supported), 'SUPPORTED_LANGUAGES is available (%s)' % (', '.join(supported) or '-'))
 
     reference_path = os.path.join(lang_dir, 'en.xml')

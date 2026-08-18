@@ -54,7 +54,6 @@ PANEL_IDS = ('SketchCreatePanel', 'SolidCreatePanel')
 IN_LINE = 'tplLine'
 IN_LENGTH = 'tplLength'
 IN_FLIP = 'tplFlip'
-IN_VERSION = 'tplVersion'
 
 RESOURCE_FOLDER = os.path.join(_DIR, 'resources', 'AddInTemplate')
 LANG_DIR = os.path.join(_DIR, 'lang')
@@ -165,9 +164,6 @@ def build_inputs(inputs):
     inputs.addValueInput(IN_LENGTH, T('in.length'), 'mm',
                          adsk.core.ValueInput.createByReal(_last[IN_LENGTH]))
     inputs.addBoolValueInput(IN_FLIP, T('in.flip'), True, '', _last[IN_FLIP])
-    # Last input, so it lands in the bottom right corner of the dialog.
-    core.add_version_label(inputs, IN_VERSION,
-                           core.read_version(_DIR, 'AddInTemplate'))
     return selection
 
 
@@ -284,7 +280,9 @@ def run(context):
 
         icons = RESOURCE_FOLDER if os.path.isdir(RESOURCE_FOLDER) else ''
         definition = ui.commandDefinitions.addButtonDefinition(
-            CMD_ID, T('cmd.name'), T('cmd.tooltip'), icons)
+            CMD_ID,
+            core.display_name(T('cmd.name'), core.read_version(_DIR, 'AddInTemplate')),
+            T('cmd.tooltip'), icons)
         _handlers.add(definition.commandCreated, CommandCreatedHandler())
 
         panel = core.find_panel(ui, WORKSPACE_ID, PANEL_IDS)

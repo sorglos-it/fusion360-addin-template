@@ -234,17 +234,11 @@ def read_version(addin_dir, name):
         return ''
 
 
-def add_version_label(inputs, input_id, version):
-    """Small grey version in the bottom right corner of the dialog.
+def display_name(name, version):
+    """Command name with the version in brackets, e.g. "Dovetail (1.4.1)".
 
-    A read-only text box spanning the full width; the label column is empty so
-    the text can sit right against the edge.
+    Fusion uses the command definition's name as the dialog title, so this is
+    where a version has to go to be visible while the dialog is open. It shows
+    on the toolbar button as well - there is only the one name.
     """
-    if not version:
-        return None
-    box = inputs.addTextBoxCommandInput(
-        input_id, '',
-        '<div align="right"><font size="1" color="#808080">v%s</font></div>' % version,
-        1, True)
-    box.isFullWidth = True
-    return box
+    return '%s (%s)' % (name, version) if version else name

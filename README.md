@@ -147,7 +147,7 @@ easy to spot. Everything uses the Python standard library only.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). © 2026 Thomas Weirich.
+MIT — see [LICENSE](LICENSE). © 2026 Sorglos Thomas Weirich.
 
 ## Donate via PayPal
 

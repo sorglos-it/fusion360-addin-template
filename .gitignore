@@ -1,12 +1,31 @@
+# Erzeugtes
+dist/
+bin/
+obj/
+.pio/
 __pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
+*.pyc
 
-.vscode/
-.idea/
+# Laufzeitdaten - Ausnahme: Firmware-Dateisystem
+apps/*/data/
+!apps/firmware*/data/
 
-.DS_Store
+# Echte Konfiguration und Secrets - nur *.example kommt ins Repo
+apps/*/config/*
+!apps/*/config/*.example
+apps/firmware*/include/config.h
+
+# Fremdcode per Paketmanager
+apps/*/vendor/
+
+# Protokolle der Editor-Hooks, keine Projektinhalte
+receipts/
+review-receipts/
+
+# Betriebssystem und Editor
 Thumbs.db
 desktop.ini
+.DS_Store
+.vscode/
+.idea/
+.venv/

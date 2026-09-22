@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Generate the toolbar icon PNGs for an add-in (standard library only).
 
-    python tools/make_icon.py                 # the template's placeholder
-    python tools/make_icon.py --addin MyAddIn # a scaffolded add-in next to it
+    python tools/make_icon.py                            # the template's placeholder
+    python tools/make_icon.py --root .. --addin MyAddIn  # scaffolded next to this repository
 
 Fusion wants 16x16, 32x32 and 64x64 PNGs with transparency in the folder
 handed to addButtonDefinition. Edit SHAPES below to draw your own - the
@@ -14,7 +14,7 @@ import struct
 import argparse
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(_HERE)
+ADDINS = os.path.join(os.path.dirname(_HERE), 'apps', 'desktop')
 
 DARK = (0x2E, 0x3A, 0x45)
 ACCENT = (0xE8, 0x8A, 0x1E)
@@ -100,8 +100,8 @@ def main():
     parser = argparse.ArgumentParser(description='Generate add-in toolbar icons.')
     parser.add_argument('--addin', default='AddInTemplate',
                         help='add-in folder name (default: AddInTemplate)')
-    parser.add_argument('--root', default=REPO,
-                        help='folder holding the add-in (default: this repository)')
+    parser.add_argument('--root', default=ADDINS,
+                        help='folder holding the add-in (default: apps/desktop in this repository)')
     args = parser.parse_args()
 
     out = os.path.join(args.root, args.addin, 'resources', args.addin)

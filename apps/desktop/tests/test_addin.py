@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Check an add-in without starting Fusion.
 
-    python tools/test_addin.py                  # the template itself
-    python tools/test_addin.py --addin MyAddIn  # a scaffolded add-in
-    python tools/test_addin.py --path "C:/.../AddIns/MyAddIn"
+    python apps/desktop/tests/test_addin.py                    # the template itself
+    python apps/desktop/tests/test_addin.py --path ../MyAddIn  # scaffolded next to this repository
+    python apps/desktop/tests/test_addin.py --path "C:/.../AddIns/MyAddIn"
 
 Stubs the adsk modules, imports the add-in and verifies the things that are
 tedious to notice inside Fusion: a manifest that parses, a real GUID, a command
@@ -21,7 +21,7 @@ import argparse
 import xml.etree.ElementTree as ElementTree
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(_HERE)
+ADDINS = os.path.dirname(_HERE)  # apps/desktop, where the template add-in lives
 
 failures = []
 warnings = []
@@ -66,11 +66,11 @@ def install_adsk_stubs():
 def main():
     parser = argparse.ArgumentParser(description='Check a Fusion 360 add-in offline.')
     parser.add_argument('--addin', default='AddInTemplate',
-                        help='add-in folder name inside the repository')
+                        help='add-in folder name inside apps/desktop of this repository')
     parser.add_argument('--path', help='full path to an add-in folder, wins over --addin')
     args = parser.parse_args()
 
-    addin_dir = os.path.abspath(args.path or os.path.join(REPO, args.addin))
+    addin_dir = os.path.abspath(args.path or os.path.join(ADDINS, args.addin))
     name = os.path.basename(addin_dir.rstrip(os.sep))
     print('checking %s' % addin_dir)
     print()

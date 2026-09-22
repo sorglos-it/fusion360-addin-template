@@ -3,7 +3,8 @@
   Reference language file. Every other file in this folder may omit keys;
   anything missing falls back to the value defined here.
   Placeholders {0}, {1}, ... are filled in by the add-in and must survive
-  translation. tools/test_addin.py checks both of those for every language.
+  translation. apps/desktop/tests/test_addin.py checks both of those for
+  every language.
 -->
 <strings language="en">
 

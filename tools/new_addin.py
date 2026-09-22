@@ -23,7 +23,7 @@ TEMPLATE_CMD_ID = 'thwAddInTemplateCmd'
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(_HERE)
-TEMPLATE_DIR = os.path.join(REPO, TEMPLATE_NAME)
+TEMPLATE_DIR = os.path.join(REPO, 'apps', 'desktop', TEMPLATE_NAME)
 
 NAME_PATTERN = re.compile(r'^[A-Za-z][A-Za-z0-9]*$')
 
@@ -138,7 +138,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Scaffold a new Fusion 360 add-in from this template.')
     parser.add_argument('name', help='add-in name, e.g. MyAddIn (letters and digits)')
-    parser.add_argument('--out', help='where to create it (default: next to the template)')
+    parser.add_argument('--out', help='where to create it (default: next to this repository)')
     parser.add_argument('--install', action='store_true',
                         help="create it straight in Fusion's add-ins directory")
     parser.add_argument('--author', default='Your Name', help='manifest author field')

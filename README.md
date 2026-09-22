@@ -80,7 +80,7 @@ MyAddIn/
 | `CMD_ID` | Unique across every installed add-in. A collision silently hijacks the other one's button. |
 | `WORKSPACE_ID`, `PANEL_IDS` | Where the button goes. Panels are tried in order, the first existing one wins. |
 | `read_inputs()` | Reads every value from the dialog once, so execute, preview and validate see the same numbers. |
-| `validate()` | Raise `fail('err.key')` for anything the user has to fix — OK is disabled and the dialog says why, in the user's language. |
+| `validate()` | Raise `fail('err.key')` for anything the user has to fix — OK is greyed out and the preview stays empty, but the dialog does not say why. The translated text only shows as a message box when `execute` runs into the error. |
 | `build_result()` | Does the work. Everything is validated by the time it runs. |
 | `build_inputs()` | Lays out the dialog. |
 | `remember()` | Keeps settings for the next use in this session. |
@@ -136,7 +136,7 @@ easy to spot. Everything uses the Python standard library only.
 - **Fusion holds handlers weakly.** A handler Python no longer references is collected and its event stops firing,
   without an error. Register every handler through `HandlerRegistry`.
 - **`executePreview` runs on every keystroke** and sees half-typed values, so it swallows errors on purpose.
-  `validateInputs` tells the user what is wrong — do not move that logic into the preview.
+  `validateInputs` greys out OK instead, without saying why — do not move that logic into the preview.
 - **Deleting the selected entity during the preview can invalidate the selection.** If your command replaces what it
   was given, do that in `execute`.
 - **Panel ids move between Fusion versions.** That is why `PANEL_IDS` is a list and `find_panel` falls back to a

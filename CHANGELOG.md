@@ -11,6 +11,8 @@
   template keep their commands.
 - README rewritten: start in 3 steps. The check and icon commands for your own add-in now name its folder (`--path`,
   `--root`) — `--addin` only ever looked inside this repository.
+- README and a code comment no longer claim the dialog says why OK is greyed out — it does not. The translated reason
+  only shows as a message box when `execute` runs into it.
 - New `CHANGELOG.md`; `.gitignore` after the project standard.
 
 Earlier versions: [Releases](https://github.com/sorglos-it/fusion360-addin-template/releases).

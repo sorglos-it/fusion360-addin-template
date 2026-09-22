@@ -211,8 +211,8 @@ class PreviewHandler(adsk.core.CommandEventHandler):
             args.isValidResult = False
         except Exception:
             # The preview fires on every keystroke, including half-typed
-            # values. Staying silent here is deliberate; validateInputs is what
-            # tells the user what is wrong.
+            # values. Staying silent here is deliberate; validateInputs greys
+            # out OK instead. Neither of them shows the user why.
             pass
 
 
